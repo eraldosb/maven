@@ -1,6 +1,9 @@
 language: java
 sudo: false # faster builds
-
 script: "mvn cobertura:cobertura"
-
-
+notifications:
+  slack: dasa-corp:T8TsUPTc0ZciT3kERx6yrLxb
+deploy:
+  provider: azure_web_apps
+  skip_cleanup: true
+  verbose: true
